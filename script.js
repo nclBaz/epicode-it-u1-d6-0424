@@ -54,3 +54,59 @@ let niente = null
 console.log("Il valore della variabile niente è:", niente) // NULL invece è una maniera volontaria di ANNULLARE il contenuto di una variabile
 niente = "Qualcosa"
 console.log("Il valore della variabile niente è:", niente)
+
+// **************************************** ASSEGNAZIONE ***************************************
+let numero = 3
+let numero2 = 9
+console.log("Il valore della variabile numero è:", numero)
+console.log("Il valore della variabile numero2 è:", numero2)
+numero = numero2 // Il valore di numero2 andrà ad esser inserito in numero
+console.log("Il valore della variabile numero è:", numero)
+console.log("Il valore della variabile numero2 è:", numero2)
+
+numero += numero2 // Scorciatoia: equivale a numero = numero + numero2
+console.log("Il valore della variabile numero è:", numero) // 9 + 9 = 18
+numero -= numero2 // equivale a numero = numero - numero2 cioè 18 - 9
+console.log("Il valore della variabile numero è:", numero)
+numero *= numero
+console.log("Il valore della variabile numero è:", numero)
+
+// *************************************** OPERATORI DI COMPARAZIONE *****************************
+// Gli operatori di comparazione restituiscono sempre RISULTATI BOOLEANI (TRUE/FALSE)
+const num1 = 5
+const num2 = 10
+const num3 = 20
+
+console.log("Num1 è uguale a num2?", num1 === num2) // = = = (TRIPLE EQUALITY)
+console.log("Num1 è più piccolo di num2?", num1 < num2)
+console.log("Num1 è più grande di num2?", num1 > num2)
+console.log("Num1 è più piccolo o uguale a num2?", num1 <= num2) // < =
+console.log("Num1 è più piccolo o uguale a num2?", num1 >= num2) // > =
+
+console.log("Il dato contenuto all'interno di num1 è numerico?", typeof num1 === "number") // typeof è un operatore speciale che ci consente di capire il tipo di dato contenuto all'interno di una variabile
+
+// *************************************** OPERATORI LOGICI *****************************
+// Gli operatori logici restituiscono sempre RISULTATI BOOLEANI (TRUE/FALSE)
+// Ci consento  di valutare più espressioni booleane in contemporanea oppure magari negarne una
+// && <- AND, se TUTTE le condizioni sono VERE allora ci darà VERO
+// || <- OR, se ALMENO UNA delle condizioni è VERA allora ci darà VERO
+// ! <- NOT, INVERTE il valore booleano di una condizione
+console.log(num1 < num2 && num2 < num3) // TRUE AND TRUE -> TRUE
+console.log(num1 > num2 && num2 < num3) // FALSE AND TRUE --> FALSE
+console.log(num1 > num2 || num2 < num3) // FALSE OR TRUE --> TRUE
+console.log(num1 > num2 || num2 > num3) // FALSE OR FALSE --> FALSE
+
+console.log(!(num1 === num2))
+console.log(num1 !== num2) // OPERATORE DI DISUGUAGLIANZA ! = =
+console.log(!(num1 < num2 && num2 < num3)) // NAND abbiamo negato l'and
+console.log(!(num1 > num2 || num2 < num3)) // NOR abbiamo negato l'or
+
+// ********************************** OPERATORE TERNARIO ********************************
+// Da utilizzare quando dobbiamo assegnare un valore ad una variabile basandoci sulla valutazione di una o più condizioni
+const myAge = 5
+const canIDrive = myAge >= 18 ? "SI" : "NO"
+console.log("Posso guidare? " + canIDrive)
+
+const isTodayBlackFriday = false
+const discount = isTodayBlackFriday ? "20%" : "0%"
+console.log("Lo sconto previsto per oggi è: " + discount)
